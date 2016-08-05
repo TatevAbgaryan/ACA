@@ -6,7 +6,11 @@ package com.aca.java.oop;
 public class Circle extends Shape {
     private int radius;
 
-    public int getRadius() {
+      public Circle(int radius) {
+		this.radius = radius;
+
+	}
+	public int getRadius() {
         return radius;
     }
 
@@ -15,7 +19,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    public int getArea() {
-        return (int)Math.PI*radius*radius;
+    public double getArea() {
+        return Math.PI*radius*radius;
     }
 }
