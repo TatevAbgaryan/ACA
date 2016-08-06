@@ -16,14 +16,13 @@ public class Main {
 		}
 
 		shapes = bubbleSort(shapes);
-		int[] array = {1,3,5,10,11,15};
-		System.out.println(binarySearch(array, 16));
+		System.out.println("index of shape with requested area = " + binarySearch(shapes, 150.0));
 	}
 
 	private static Shape[] bubbleSort(Shape[] array) {
 		for (int i = 0; i < array.length - 1; i++)
 			for (int j = 0; j < array.length - 1; j++) {
-				if (array[j].getArea() < array[j + 1].getArea()) {
+				if (array[j].getArea() > array[j + 1].getArea()) {
 					Shape temp = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = temp;
@@ -35,32 +34,17 @@ public class Main {
 	}
 
 	private static int binarySearch(Shape[] array, double area) {
-		int end = array.length - 1;
-		int start = 0;
-
-		while (start <= end) {
-			int midIndex = (end + start) / 2;
-			if (array[midIndex].getArea() == area)
-				return midIndex;
-			if (array[midIndex].getArea() > area)
-				end = midIndex;
-			else if (array[midIndex].getArea() < area)
-				start = midIndex;
-		}
-		return -1;
-	}
-	private static int binarySearch(int[] array, int element) {
         int end = array.length-1;
         int start = 0;
 
         while (start<= end) {
-            int midIndex = (end + start) / 2;
-            if (array[midIndex] == element)
+            int midIndex = start +(end - start) / 2;
+            if (array[midIndex].getArea() == area)
                 return midIndex;
-            if (array[midIndex] > element)
-                end = midIndex;
-            else if (array[midIndex] < element)
-                start = midIndex;
+            if (array[midIndex].getArea() > area)
+                end = midIndex-1;
+            else if (array[midIndex].getArea() < area)
+                start = midIndex+1;
         }
         return -1;
     }
