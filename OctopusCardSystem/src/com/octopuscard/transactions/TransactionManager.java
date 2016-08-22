@@ -13,7 +13,7 @@ public class TransactionManager implements ITransaction {
 
 	@Override
 	public void record(int money, Date date, Card card, String cardUsageType) {
-		card.getAccount().updateBalance(-money);
+		card.updateBalance(-money);
 		String record = "spent money = " + money + "from card " + card.getAccountNumber() + " on " + date.toString()
 				+ " for " + cardUsageType + " \n";
 		PrintWriter writer = null;
