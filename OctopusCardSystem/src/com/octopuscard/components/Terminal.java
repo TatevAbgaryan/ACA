@@ -1,5 +1,7 @@
 package com.octopuscard.components;
 
+import com.octopuscard.components.cards.Card;
+
 public class Terminal {
 
 	public static enum TerminalType {
@@ -22,7 +24,7 @@ public class Terminal {
 		return type;
 	}
 
-	public static int getMoneyForItinerary(Terminal souce, Terminal dest) {
+	public static int getMoneyForItinerary(Terminal souce, Terminal dest, Card card) {
 		// count money using address information
 
 		return 100;

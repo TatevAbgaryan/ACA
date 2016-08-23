@@ -34,10 +34,10 @@ public class TestSystem {
 				cardSystem.topUp(card);
 				break;
 			case "enter metro":
-				card.onTerminalTap(source);
+				card.onTerminalTap(source, card);
 				break;
 			case "leave metro":
-				card.onTerminalTap(dest);
+				card.onTerminalTap(dest,card);
 				break;
 			case "print transactions":
 				cardSystem.printTransactions();

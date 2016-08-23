@@ -15,7 +15,7 @@ public class CardSystem implements ICardSystem {
 
 	@Override
 	public void tapTerminal(Terminal terminal, CardShopAndTravel card) {
-		card.onTerminalTap(terminal);
+		card.onTerminalTap(terminal, card);
 	}
 
 	@Override
